@@ -1,98 +1,46 @@
 # q4
 Quarter 4 Project - Hangman
-
 I'm creating a text-based hangman game in Python.
 
-# design the hangman/user interface
+#### Deadlines
 
-def none():
-    return '''
- ________
- |/     |
- |
- |
- |
- |
- |
-_|___
-'''
+###### 04/26/24
+- Create a schedule
+- Design the hangman
+- Store words if the user wants to play against the computer
+- Ask if the user wants to play against the comp. (option 1) or another player (option 2)
 
-def head():
-    return '''
- ________
- |/     |
- |     (_)
- |
- |
- |
- |
-_|___
-'''
+###### 05/03/24
+- Call a function depending on what the user picks
+- Code Option 1
+    - Choose a random word from the stored words
+    - Add the word to a list
+    - Print a blank line for each letter
 
-def body():
-    return '''
- ________
- |/     |
- |     (_)
- |      |
- |      |
- |
- |
-_|___
-'''
+###### 05/10/24
+- Continue Option 1
+    - Ask the user for guesses on letters
+    - Print the letter/hangman depending on if the user got it wrong or not
+    - Keep track of the guesses the user makes (let them know if they guessed the same letter twice)
+    - When they win/lose, ask if they want to play again
+ 
+###### 05/17/24
+- Code Option 2
+    - Create Player 1 and 2
+    - Player 1 chooses a word
+    - Add the word to a list
+    - Print a blank line for each letter
 
-def rightarm():
-    return '''
- ________
- |/     |
- |     (_)
- |      |/
- |      |
- |
- |
-_|___
-'''
+###### 05/24/24
+- Continue Option 2
+    - Ask Player 2 for letter guesses
+    - Print the letter/hangman depending on if the letter is wrong or not
+    - Keep track of the guesses the user makes (let them know if they guessed the same letter twice)
+    - When they win/lose, ask if they want to play again
+- Fix any bugs
 
-def leftarm():
-    return '''
- ________
- |/     |
- |     (_)
- |     \|/
- |      |
- |
- |
-_|___
-'''
+###### 06/07/24
+- Continue fixing any bugs
+- Design/refine the user interface
+- Let other people play the game
 
-def rightleg():
-    return '''
- ________
- |/     |
- |     (_)
- |     \|/
- |      |
- |       \_
- |
-_|___
-'''
-
-def leftleg():
-    return '''
- ________
- |/     |
- |     (_)
- |     \|/
- |      |
- |    _/ \_
- |
-_|___
-'''
-
-print(none())
-print(head())
-print(body())
-print(rightarm())
-print(leftarm())
-print(rightleg())
-print(leftleg())
