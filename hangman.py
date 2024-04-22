@@ -83,3 +83,19 @@ def leftleg():
  |
 _|___
 '''
+
+words = [
+    'place',
+    'cabin',
+    'color',
+    'fountain'
+    ]
+
+#test cases
+
+print(none())
+print(head())
+print(leftarm())
+print(leftleg())
+
+print(words)
