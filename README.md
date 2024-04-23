@@ -8,10 +8,11 @@
 - Create a schedule
 - Design the hangman
 - Store words if the user wants to play against the computer
-- Ask if the user wants to play against the comp. (option 1) or another player (option 2)
+- Ask if the user wants to play against the comp. (option 1) or another player (option 2) of if they want to see the instructions
     - call a function depending on what they pick
 
 ##### 05/03/24
+- Code the instructions
 - Code Option 1
     - Choose a random word from the stored words
     - Add the word to a list
