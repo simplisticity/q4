@@ -84,12 +84,35 @@ def leftleg():
 _|___
 '''
 
+# stored words
+
 words = [
-    'place',
     'cabin',
     'color',
-    'fountain'
+    'fountain',
+    'grandmother',
+    'person',
+    'highway',
+    'baseball',
+    'poetry',
+    'shopping',
+    'magazine',
+    'hat',
+    'gate'
     ]
+
+choice = input(
+      '''
+      Welcome to Hangman! Here are the options.
+      
+      1: Solo (Player VS Computer)
+      2: Multiplayer (Player VS Player)
+      3: How To Play
+      4: End Game
+      
+      Type the number of your choice here: 
+      '''
+      )
 
 #test cases
 
