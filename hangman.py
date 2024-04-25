@@ -101,9 +101,24 @@ words = [
     'gate'
     ]
 
-choice = input(
+print('''
+  ██░ ██  ▄▄▄       ███▄    █   ▄████  ███▄ ▄███▓ ▄▄▄       ███▄    █ 
+ ▓██░ ██▒▒████▄     ██ ▀█   █  ██▒ ▀█▒▓██▒▀█▀ ██▒▒████▄     ██ ▀█   █ 
+ ▒██▀▀██░▒██  ▀█▄  ▓██  ▀█ ██▒▒██░▄▄▄░▓██    ▓██░▒██  ▀█▄  ▓██  ▀█ ██▒
+ ░▓█ ░██ ░██▄▄▄▄██ ▓██▒  ▐▌██▒░▓█  ██▓▒██    ▒██ ░██▄▄▄▄██ ▓██▒  ▐▌██▒
+ ░▓█▒░██▓ ▓█   ▓██▒▒██░   ▓██░░▒▓███▀▒▒██▒   ░██▒ ▓█   ▓██▒▒██░   ▓██░
+  ▒ ░░▒░▒ ▒▒   ▓▒█░░ ▒░   ▒ ▒  ░▒   ▒ ░ ▒░   ░  ░ ▒▒   ▓▒█░░ ▒░   ▒ ▒ 
+  ▒ ░▒░ ░  ▒   ▒▒ ░░ ░░   ░ ▒░  ░   ░ ░  ░      ░  ▒   ▒▒ ░░ ░░   ░ ▒░
+  ░  ░░ ░  ░   ▒      ░   ░ ░ ░ ░   ░ ░      ░     ░   ▒      ░   ░ ░ 
+  ░  ░  ░      ░  ░         ░       ░        ░         ░  ░         ░ 
       '''
-      Welcome to Hangman! Here are the options.
+      )
+
+while True:
+
+    choice = input(
+      '''
+      Here are the options.
       
       1: Solo (Player VS Computer)
       2: Multiplayer (Player VS Player)
@@ -112,13 +127,13 @@ choice = input(
       
       Type the number of your choice here: 
       '''
-      )
+                  )
 
-#test cases
-
-print(none())
-print(head())
-print(leftarm())
-print(leftleg())
-
-print(words)
+    if choice == "1":
+        print("solo game")
+    elif choice == "2":
+        print("multiplayer")
+    elif choice == "3":
+        print("instructions")
+    elif choice == "4":
+        break
