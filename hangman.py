@@ -3,10 +3,10 @@
 def none():
     return '''
  ________
- |/     |
+ |/     |       Body Parts Remaining: 6
  |
  |
- |
+ |              NICE!
  |
  |
 _|___
@@ -15,10 +15,10 @@ _|___
 def head():
     return '''
  ________
- |/     |
+ |/     |       Body Parts Remaining: 5
  |     (_)
  |
- |
+ |              Only one wrong guess, it's okay!
  |
  |
 _|___
@@ -27,10 +27,10 @@ _|___
 def body():
     return '''
  ________
- |/     |
+ |/     |       Body Parts Remaining: 4
  |     (_)
  |      |
- |      |
+ |      |       It's fine, YOU CAN STILL SAVE HIM!
  |
  |
 _|___
@@ -39,10 +39,10 @@ _|___
 def rightarm():
     return '''
  ________
- |/     |
+ |/     |       Body Parts Remaining: 3!
  |     (_)
  |      |/
- |      |
+ |      |       It's fine, YOU CAN STILL SAVE HIM!
  |
  |
 _|___
@@ -51,10 +51,10 @@ _|___
 def leftarm():
     return '''
  ________
- |/     |
+ |/     |       Body Parts Remaining: 2!
  |     (_)
  |     \|/
- |      |
+ |      |       It's fine, YOU CAN STILL SAVE HIM!
  |
  |
 _|___
@@ -63,10 +63,10 @@ _|___
 def rightleg():
     return '''
  ________
- |/     |
+ |/     |       Body Parts Remaining: 1!!
  |     (_)
  |     \|/
- |      |
+ |      |       You have ONE more life... or limb; make it count!
  |       \_
  |
 _|___
@@ -75,10 +75,10 @@ _|___
 def leftleg():
     return '''
  ________
- |/     |
+ |/     |       Body Parts Remaining: 0
  |     (_)
  |     \|/
- |      |
+ |      |       R.I.P.
  |    _/ \_
  |
 _|___
