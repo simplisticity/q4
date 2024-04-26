@@ -8,8 +8,7 @@
 - Create a schedule
 - Design the hangman
 - Store words if the user wants to play against the computer
-- Ask if the user wants to play against the comp. (option 1) or another player (option 2) of if they want to see the instructions
-    - call a function depending on what they pick
+- Ask if the user wants to play against the comp. (option 1) or another player (option 2) or if they want to see the instructions
 
 ##### 05/03/24
 - Code the instructions
