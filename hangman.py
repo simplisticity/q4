@@ -117,18 +117,21 @@ _________________________________________________________________________
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       ''')
 
+import random
+word = ['_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_']
+
 while True:
 
     choice = input(
-      '''                                                         ________
-      Here are the options.                              |/     |
-                                                         |     (_)
-      1: Solo (Player VS Computer)                       |     \|/
-      2: Multiplayer (Player VS Player)                  |      |
-      3: How To Play                                     |    _/ \_
-      4: End Game                                        |
-                                                        _|___
-      Type the number of your choice here: ''')     
+      '''                                                        ________
+     Here are the options.                              |/     |
+                                                        |     (_)
+     1: Solo (Player VS Computer)                       |     \|/
+     2: Multiplayer (Player VS Player)                  |      |
+     3: How To Play                                     |    _/ \_
+     4: End Game                                        |
+                                                       _|___
+     Type the number of your choice here: ''')     
 
     if choice == "1":
         
@@ -142,11 +145,24 @@ while True:
       multiplayer''')
         break
       
-    elif choice == "3":
+    elif choice == "3": # instructions
         
         print('''
-      instructions''')
-        break
+                            INSTRUCTIONS
+                             
+     To WIN hangman, you must guess the chosen word before the stick 
+                           figure is hung!
+                           
+     You must guess one letter at a time to slowly unlock the entire
+     word. But be careful! Every time your guess is wrong, the stick
+     figure's body parts will be added one at a time. Make sure to
+     correctly guess the word before the entire stick figure is hung!''')
+      
+      
+        goback = input('''
+     Type 'Back' to go back: ''')
+        if goback == "Back" or goback == "back":
+            continue
       
     elif choice == "4":
         break
