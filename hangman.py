@@ -118,7 +118,7 @@ _________________________________________________________________________
       ''')
 
 import random
-word = ['_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_']
+word = ['__', '__', '__', '__', '__', '__', '__', '__', '__', '__', '__', '__', '__', '__', '__']
 
 while True:
 
@@ -135,8 +135,12 @@ while True:
 
     if choice == "1":
         
-        print('''
-      solo game''')
+        length = random.choice(words) # get the length of the randomly chosen word
+        print(length) # will delete, making sure letters = blank lines
+        word = word[0:len(length)] # reduce amt of blank lines to equal amt of letters
+        
+        for blank in word:
+            print(blank, end="  ")
         break
       
     elif choice == "2":
@@ -161,6 +165,8 @@ while True:
       
         goback = input('''
      Type 'Back' to go back: ''')
+        print('''
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ''')
         if goback == "Back" or goback == "back":
             continue
       
