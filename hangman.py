@@ -132,6 +132,8 @@ while True:
      4: End Game                                        |
                                                        _|___
      Type the number of your choice here: ''')     
+    print('''
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ''')
 
     if choice == "1":
         
