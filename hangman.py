@@ -146,7 +146,41 @@ while True:
         
         for blank in word:
             print(blank, end="  ")
-        break
+
+        while choice == "1":
+        
+            guess = input("Guess a letter: ")
+            if guess in length:
+                if wrong == 0:
+                    print(none())
+                elif wrong == 1:
+                    print(head())
+                elif wrong == 2:
+                    print(body())
+                elif wrong == 3:
+                    print(rightarm())
+                elif wrong == 4:
+                    print(leftarm())
+                elif wrong == 5:
+                    print(rightleg())
+                elif wrong == 6:
+                    print(leftleg())
+            
+            elif guess not in length:
+                wrong += 1
+                if wrong == 1:
+                    print(head())
+                elif wrong == 2:
+                    print(body())
+                elif wrong == 3:
+                    print(rightarm())
+                elif wrong == 4:
+                    print(leftarm())
+                elif wrong == 5:
+                    print(rightleg())
+                elif wrong == 6:
+                    print(leftleg())
+                    break
       
     elif choice == "2":
         
