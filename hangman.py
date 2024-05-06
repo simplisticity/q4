@@ -139,6 +139,7 @@ while True:
         length = random.choice(words) # get the length of the randomly chosen word
         print(length) # will delete, making sure letters = blank lines
         word = word[0:len(length)] # reduce amt of blank lines to equal amt of letters
+        wrong = 0
 
         print('''
      Here is the secret word:
