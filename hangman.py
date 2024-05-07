@@ -119,7 +119,7 @@ _________________________________________________________________________
 
 import random
 while True:
-    word = ['__', '__', '__', '__', '__', '__', '__', '__', '__', '__', '__', '__', '__', '__', '__']
+    word = ['__']
 
     choice = input(
       '''                                                        ________
@@ -138,7 +138,7 @@ while True:
         
         length = random.choice(words) # get the length of the randomly chosen word
         print(length) # will delete, making sure letters = blank lines
-        word = word[0:len(length)] # reduce amt of blank lines to equal amt of letters
+        word = word * len(length) # multiply to make it equal amt of letters in word
         wrong = 0
 
         print('''
@@ -166,6 +166,12 @@ while True:
                     print(rightleg())
                 elif wrong == 6:
                     print(leftleg())
+
+            cind = length \
+                    .index(guess)
+                word[cind] = guess
+                for blank in word:
+                    print(blank, end = "  ")
             
             elif guess not in length:
                 wrong += 1
