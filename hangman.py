@@ -140,6 +140,7 @@ while True:
         print(length) # will delete, making sure letters = blank lines
         word = word * len(length) # multiply to make it equal amt of letters in word
         wrong = 0
+        wrongGuesses []
 
         print('''
      Here is the secret word:
@@ -175,7 +176,13 @@ while True:
                     print(blank, end = "  ")
             
             elif guess not in length:
+                
+                if guess in wrongGuesses:
+                    print("You already guessed this!")
+                    continue
+                    
                 wrong += 1
+                wrongGuesses.append(guess)
                 if wrong == 1:
                     print(head())
                 elif wrong == 2:
