@@ -140,7 +140,7 @@ while True:
         print(length) # will delete, making sure letters = blank lines
         word = word * len(length) # multiply to make it equal amt of letters in word
         wrong = 0
-        wrongGuesses []
+        wrongGuesses = []
 
         print('''
      Here is the secret word:
