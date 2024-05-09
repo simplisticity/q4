@@ -167,9 +167,10 @@ while True:
                 elif wrong == 6:
                     print(leftleg())
 
-            cind = length \
-                    .index(guess)
-                word[cind] = guess
+                for letter in range(len(length)):
+                    if guess == length[letter]:
+                        word[letter] = guess
+                        
                 for blank in word:
                     print(blank, end = "  ")
             
