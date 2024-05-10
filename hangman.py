@@ -137,7 +137,6 @@ while True:
     if choice == "1":
         
         length = random.choice(words) # get the length of the randomly chosen word
-        print(length) # will delete, making sure letters = blank lines
         word = word * len(length) # multiply to make it equal amt of letters in word
         wrong = 0
         wrongGuesses = []
@@ -152,7 +151,19 @@ while True:
         while choice == "1":
         
             guess = input("Guess a letter: ")
-            if guess in length:
+            
+            if guess.lower() in length:
+                for letter in range(len(length)):
+                    if guess.lower() == length[letter]:
+                        word[letter] = guess.lower()
+
+                if "__" not in word:
+                    print('''
+     You've guessed the word! The word was "''' + length + '''".
+     
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ''')
+                    break
+                        
                 if wrong == 0:
                     print(none())
                 elif wrong == 1:
@@ -167,10 +178,6 @@ while True:
                     print(rightleg())
                 elif wrong == 6:
                     print(leftleg())
-
-                for letter in range(len(length)):
-                    if guess == length[letter]:
-                        word[letter] = guess
                         
                 for blank in word:
                     print(blank, end = "  ")
@@ -195,6 +202,9 @@ while True:
                     print(rightleg())
                 elif wrong == 6:
                     print(leftleg())
+                    print('''
+     Oh no, you couldn't guess the word! The word was"''' + length + '''".
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ''')
                     break
       
     elif choice == "2":
