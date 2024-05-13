@@ -276,8 +276,17 @@ while True:
       
     elif choice == "2":
         
+        player1 = ""
+        player2 = ""
+        
         print('''
-      multiplayer''')
+      Make sure you have a friend with you! Once you do, decide which one
+      of you wants to be Player 1 and who'll be Player 2. 
+      
+      Player 1 will choose the word
+      Player 2 has to guess the word
+      
+      Have you decided? Enter your names below!''')
         break
       
     elif choice == "3": # instructions
