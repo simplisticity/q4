@@ -2,11 +2,47 @@
 
 def none():
     return '''
+
+                Lives Remaining: 9
+
+
+
+
+
+_____
+'''
+
+def stand():
+    return '''
+
+ |              Lives Remaining: 8
+ |
+ |
+ |              Only one wrong guess, it's okay!
+ |
+ |
+_|___
+'''
+
+def upper():
+    return '''
  ________
- |/     |       Body Parts Remaining: 6
+ |/             Lives Remaining: 7
+ |     
+ |
+ |              Only two wrong guesses, it's okay!
  |
  |
- |              NICE!
+_|___
+'''
+
+def string():
+    return '''
+ ________
+ |/     |       Lives Remaining: 6
+ |
+ |
+ |              There's still time to recover!
  |
  |
 _|___
@@ -15,10 +51,10 @@ _|___
 def head():
     return '''
  ________
- |/     |       Body Parts Remaining: 5
+ |/     |       Lives Remaining: 5
  |     (_)
  |
- |              Only one wrong guess, it's okay!
+ |              Five lives left!
  |
  |
 _|___
@@ -27,7 +63,7 @@ _|___
 def body():
     return '''
  ________
- |/     |       Body Parts Remaining: 4
+ |/     |       Lives Remaining: 4
  |     (_)
  |      |
  |      |       It's fine, YOU CAN STILL SAVE HIM!
@@ -39,7 +75,7 @@ _|___
 def rightarm():
     return '''
  ________
- |/     |       Body Parts Remaining: 3!
+ |/     |       Lives Remaining: 3!
  |     (_)
  |      |/
  |      |       It's fine, YOU CAN STILL SAVE HIM!
@@ -51,7 +87,7 @@ _|___
 def leftarm():
     return '''
  ________
- |/     |       Body Parts Remaining: 2!
+ |/     |       Lives Remaining: 2!
  |     (_)
  |     \|/
  |      |       It's fine, YOU CAN STILL SAVE HIM!
@@ -63,7 +99,7 @@ _|___
 def rightleg():
     return '''
  ________
- |/     |       Body Parts Remaining: 1!!
+ |/     |       Lives Remaining: 1!
  |     (_)
  |     \|/
  |      |       You have ONE more life... or limb; make it count!
@@ -75,7 +111,7 @@ _|___
 def leftleg():
     return '''
  ________
- |/     |       Body Parts Remaining: 0
+ |/     |       Lives Remaining: 0
  |     (_)
  |     \|/
  |      |       R.I.P.
@@ -98,7 +134,12 @@ words = [
     'shopping',
     'magazine',
     'hat',
-    'gate'
+    'gate',
+    'computer',
+    'glasses',
+    'backpack',
+    'mattress',
+    'suitcase'
     ]
 
 print('''
@@ -142,7 +183,7 @@ while True:
         wrongGuesses = []
 
         print('''
-     Here is the secret word:
+     You have 10 lives left! Here is the secret word:
          ''')
         
         for blank in word:
@@ -167,17 +208,21 @@ while True:
                 if wrong == 0:
                     print(none())
                 elif wrong == 1:
-                    print(head())
+                    print(stand())
                 elif wrong == 2:
-                    print(body())
+                    print(upper())
                 elif wrong == 3:
-                    print(rightarm())
+                    print(string())
                 elif wrong == 4:
-                    print(leftarm())
+                    print(head())
                 elif wrong == 5:
-                    print(rightleg())
+                    print(body())
                 elif wrong == 6:
-                    print(leftleg())
+                    print(rightarm())
+                elif wrong == 7:
+                    print(leftarm())
+                elif wrong == 8:
+                    print(rightleg())
                         
                 for blank in word:
                     print(blank, end = "  ")
@@ -191,19 +236,41 @@ while True:
                 wrong += 1
                 wrongGuesses.append(guess)
                 if wrong == 1:
-                    print(head())
+                    print(stand())
+                    for blank in word:
+                        print(blank, end = "  ")
                 elif wrong == 2:
-                    print(body())
+                    print(upper())
+                    for blank in word:
+                        print(blank, end = "  ")
                 elif wrong == 3:
-                    print(rightarm())
+                    print(string())
+                    for blank in word:
+                        print(blank, end = "  ")
                 elif wrong == 4:
-                    print(leftarm())
+                    print(head())
+                    for blank in word:
+                        print(blank, end = "  ")
                 elif wrong == 5:
-                    print(rightleg())
+                    print(body())
+                    for blank in word:
+                        print(blank, end = "  ")
                 elif wrong == 6:
+                    print(rightarm())
+                    for blank in word:
+                        print(blank, end = "  ")
+                elif wrong == 7:
+                    print(leftarm())
+                    for blank in word:
+                        print(blank, end = "  ")
+                elif wrong == 8:
+                    print(rightleg())
+                    for blank in word:
+                        print(blank, end = "  ")
+                elif wrong == 9:
                     print(leftleg())
                     print('''
-     Oh no, you couldn't guess the word! The word was"''' + length + '''".
+     Oh no, you couldn't guess the word! The word was "''' + length + '''".
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ''')
                     break
       
