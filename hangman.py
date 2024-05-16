@@ -183,8 +183,8 @@ while True:
         wrongGuesses = []
 
         print('''
-     You have 10 lives left! Here is the secret word:
-         ''')
+     You have 9 lives left! Here is the secret word:
+         ''' + none())
         
         for blank in word:
             print(blank, end="  ")
@@ -292,10 +292,47 @@ while True:
         player2 = input('''
       Player 2: ''')
       
-        player1_word = input('''
+        player_word = input('''
       Okay ''' + player1 +  ''', turn the device towards you and make sure ''' + player2 + '''
       can't see what you're typing! Once you've done that, enter your 
       secret word here: ''')
+        word = word * len(player_word)
+        
+        print('''
+      |    |    |    |    |    |    |    |    |    |    |    |  
+      `._  `.__.'  _.'    `.__.'  _.'    `.__.'  _.'    `.__.'  
+    "-.  "-.    ,-"  ,-""-.    ,-"  ,-""-.    ,-"  ,-""-.    ,-"
+      |    |    |    |    |    |    |    |    |    |    |    |  
+      |    |    |    |    |    |    |    |    |    |    |    |  
+    _.'    `.__.'  _.'  _.'  _.'    `.__.'  _.'    `.__.'  _.'  
+      ,-""-.    ,-"  ,-"  ,-"  ,-""-.    ,-"  ,-""-.    ,-"  ,-"
+      |    |    |    |    |    |    |    |    |    |    |    |  
+      |    |    |    |    |    |    |    |    |    |    |    |  
+    _.'  _.'    `.__.'    `.__.'  _.'    `.__.'  _.'  _.'  _.'  
+      ,-"  ,-""-.    ,-""-.    ,-"  ,-""-.    ,-"  ,-"  ,-"  ,-"
+      |    |    |    |    |    |    |    |    |    |    |    |  
+      |    |    |    |    |    |    |    |    |    |    |    |  
+    _.'    `.__.'  _.'    `.__.'  _.'  _.'    `.__.'  _.'    `._
+      ,-""-.    ,-"  ,-""-.    ,-"  ,-"  ,-""-.    ,-"  ,-""-.  
+      |    |    |    |    |    |    |    |    |    |    |    |  
+      |    |    |    |    |    |    |    |    |    |    |    |  
+    _.'  _.'  _.'    `.__.'  _.'    `.__.'  _.'    `.__.'  _.'  
+      ,-"  ,-"  ,-""-.    ,-"  ,-""-.    ,-"  ,-""-.    ,-"  ,-"
+      |    |    |    |    |    |    |    |    |    |    |    |  
+      |    |    |    |    |    |    |    |    |    |    |    |  
+      `.__.'  _.'  _.'  _.'    `.__.'  _.'  _.'    `.__.'  _.'
+    "-.    ,-"  ,-"  ,-"  ,-""-.    ,-"  ,-"  ,-""-.    ,-"  ,-"
+      |    |    |    |    |    |    |    |    |    |    |    |
+              
+              
+      Goood choice! Now turn the device back towards ''' + player2 + '''.
+      Make sure they DON'T scroll up and see your secret word!
+      
+      Now it's your turn, ''' + player2 + '''. Guess your partner's word! And
+      don't cheat, that would be so lame.''')
+        
+        for blank in word:
+            print(blank, end = "  ")
         break
       
     elif choice == "3": # instructions
