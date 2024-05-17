@@ -330,9 +330,17 @@ while True:
       
       Now it's your turn, ''' + player2 + '''. Guess your partner's word! And
       don't cheat, that would be so lame.''')
+
+        print('''
+      You have 9 lives left! Here is the secret word:
+         ''' + none())
         
         for blank in word:
             print(blank, end = "  ")
+
+        while choice == "2":
+            guess = input("Guess a letter: ")
+            break
         break
       
     elif choice == "3": # instructions
