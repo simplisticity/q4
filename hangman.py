@@ -275,6 +275,9 @@ while True:
                     break
       
     elif choice == "2":
+
+        wrong = 0
+        wrongGuesses = []
         
         print('''
       Make sure you have a friend with you! Once you do, decide which
@@ -340,7 +343,41 @@ while True:
 
         while choice == "2":
             guess = input("Guess a letter: ")
-            break
+
+            if guess.lower() in player_word:
+                for letter in range(len(player_word)):
+                    if guess.lower() == player_word[letter]:
+                        word[letter] = guess.lower()
+                        
+                if "__" not in word:
+                    print('''
+     You've guessed the word! The word was "''' + player_word + '''".
+     
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ''')
+                    break
+                
+                if wrong == 0:
+                    print(none())
+                elif wrong == 1:
+                    print(stand())
+                elif wrong == 2:
+                    print(upper())
+                elif wrong == 3:
+                    print(string())
+                elif wrong == 4:
+                    print(head())
+                elif wrong == 5:
+                    print(body())
+                elif wrong == 6:
+                    print(rightarm())
+                elif wrong == 7:
+                    print(leftarm())
+                elif wrong == 8:
+                    print(rightleg())
+                        
+                for blank in word:
+                    print(blank, end = "  ")
+
         break
       
     elif choice == "3": # instructions
