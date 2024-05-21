@@ -351,7 +351,7 @@ while True:
                         
                 if "__" not in word:
                     print('''
-     You've guessed the word! The word was "''' + player_word + '''".
+     Looks like ''' + player2.upper() + ''' WINS! The word was "''' + player_word + '''".
      
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ''')
                     break
@@ -377,8 +377,54 @@ while True:
                         
                 for blank in word:
                     print(blank, end = "  ")
-
-        break
+                    
+            elif guess not in player_word:
+                
+                if guess in wrongGuesses:
+                    print("You already guessed this!")
+                    continue
+                                
+                wrong += 1
+                wrongGuesses.append(guess)
+                if wrong == 1:
+                    print(stand())
+                    for blank in word:
+                        print(blank, end = "  ")
+                elif wrong == 2:
+                    print(upper())
+                    for blank in word:
+                        print(blank, end = "  ")
+                elif wrong == 3:
+                    print(string())
+                    for blank in word:
+                        print(blank, end = "  ")
+                elif wrong == 4:
+                    print(head())
+                    for blank in word:
+                        print(blank, end = "  ")
+                elif wrong == 5:
+                    print(body())
+                    for blank in word:
+                        print(blank, end = "  ")
+                elif wrong == 6:
+                    print(rightarm())
+                    for blank in word:
+                        print(blank, end = "  ")
+                elif wrong == 7:
+                    print(leftarm())
+                    for blank in word:
+                        print(blank, end = "  ")
+                elif wrong == 8:
+                    print(rightleg())
+                    for blank in word:
+                        print(blank, end = "  ")
+                elif wrong == 9:
+                    print(leftleg())
+                    print('''
+     Looks like ''' + player2 + ''' couldn't guess the word so... ''' + player1.upper() + ''' WINS.
+     The word was "''' + player_word + '''".
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ''')
+                    break
       
     elif choice == "3": # instructions
         
