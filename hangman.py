@@ -142,6 +142,44 @@ words = [
     'suitcase'
     ]
 
+def hangman():
+        if wrong == 0:
+            print(none())
+            for blank in word:
+                print(blank, end = "  ") # print the updated board
+        elif wrong == 1:
+            print(stand())
+            for blank in word:
+                print(blank, end = "  ") # print the updated board
+        elif wrong == 2:
+            print(upper())
+            for blank in word:
+                print(blank, end = "  ") # print the updated board
+        elif wrong == 3:
+            print(string())
+            for blank in word:
+                print(blank, end = "  ") # print the updated board
+        elif wrong == 4:
+            print(head())
+            for blank in word:
+                print(blank, end = "  ") # print the updated board
+        elif wrong == 5:
+            print(body())
+            for blank in word:
+                print(blank, end = "  ") # print the updated board
+        elif wrong == 6:
+            print(rightarm())
+            for blank in word:
+                print(blank, end = "  ") # print the updated board
+        elif wrong == 7:
+            print(leftarm())
+            for blank in word:
+                print(blank, end = "  ") # print the updated board
+        elif wrong == 8:
+            print(rightleg())
+            for blank in word:
+                print(blank, end = "  ") # print the updated board
+
 print('''
 _________________________________________________________________________
 .~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.
@@ -177,10 +215,11 @@ while True:
 
     if choice == "1":
         
-        length = random.choice(words) # get the length of the randomly chosen word
-        word = word * len(length) # multiply to make it equal amt of letters in word
-        wrong = 0
-        wrongGuesses = []
+        chosen_word = random.choice(words) # get the chosen_word of the randomly chosen word
+        #print(chosen_word) # will delete, making sure letters = blank lines
+        word = word * len(chosen_word) # multiply to make it equal amt of letters in word
+        wrong = 0 # keep track of how many wrong guesses they have
+        wrongGuesses = [] # keep track of the wrong guesses
 
         print('''
      You have 9 lives left! Here is the secret word:
@@ -193,41 +232,21 @@ while True:
         
             guess = input("Guess a letter: ")
             
-            if guess.lower() in length:
-                for letter in range(len(length)):
-                    if guess.lower() == length[letter]:
+            if guess.lower() in chosen_word:
+                for letter in range(len(chosen_word)):
+                    if guess.lower() == chosen_word[letter]:
                         word[letter] = guess.lower()
 
                 if "__" not in word:
                     print('''
-     You've guessed the word! The word was "''' + length + '''".
+     You've guessed the word! The word was "''' + chosen_word + '''".
      
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ''')
                     break
-                        
-                if wrong == 0:
-                    print(none())
-                elif wrong == 1:
-                    print(stand())
-                elif wrong == 2:
-                    print(upper())
-                elif wrong == 3:
-                    print(string())
-                elif wrong == 4:
-                    print(head())
-                elif wrong == 5:
-                    print(body())
-                elif wrong == 6:
-                    print(rightarm())
-                elif wrong == 7:
-                    print(leftarm())
-                elif wrong == 8:
-                    print(rightleg())
-                        
-                for blank in word:
-                    print(blank, end = "  ")
-            
-            elif guess not in length:
+
+                hangman()
+                                
+            elif guess not in chosen_word:
                 
                 if guess in wrongGuesses:
                     print("You already guessed this!")
@@ -235,44 +254,15 @@ while True:
                     
                 wrong += 1
                 wrongGuesses.append(guess)
-                if wrong == 1:
-                    print(stand())
-                    for blank in word:
-                        print(blank, end = "  ")
-                elif wrong == 2:
-                    print(upper())
-                    for blank in word:
-                        print(blank, end = "  ")
-                elif wrong == 3:
-                    print(string())
-                    for blank in word:
-                        print(blank, end = "  ")
-                elif wrong == 4:
-                    print(head())
-                    for blank in word:
-                        print(blank, end = "  ")
-                elif wrong == 5:
-                    print(body())
-                    for blank in word:
-                        print(blank, end = "  ")
-                elif wrong == 6:
-                    print(rightarm())
-                    for blank in word:
-                        print(blank, end = "  ")
-                elif wrong == 7:
-                    print(leftarm())
-                    for blank in word:
-                        print(blank, end = "  ")
-                elif wrong == 8:
-                    print(rightleg())
-                    for blank in word:
-                        print(blank, end = "  ")
-                elif wrong == 9:
+                
+                if wrong == 9:
                     print(leftleg())
                     print('''
-     Oh no, you couldn't guess the word! The word was "''' + length + '''".
+     Oh no, you couldn't guess the word! The word was "''' + chosen_word + '''".
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ''')
                     break
+                    
+                hangman()
       
     elif choice == "2":
 
@@ -295,11 +285,11 @@ while True:
         player2 = input('''
       Player 2: ''')
       
-        player_word = input('''
+        chosen_word = input('''
       Okay ''' + player1 +  ''', turn the device towards you and make sure ''' + player2 + '''
       can't see what you're typing! Once you've done that, enter your 
       secret word here: ''')
-        word = word * len(player_word)
+        word = word * len(chosen_word)
         
         print('''
       |    |    |    |    |    |    |    |    |    |    |    |  
@@ -344,41 +334,21 @@ while True:
         while choice == "2":
             guess = input("Guess a letter: ")
 
-            if guess.lower() in player_word:
-                for letter in range(len(player_word)):
-                    if guess.lower() == player_word[letter]:
+            if guess.lower() in chosen_word:
+                for letter in range(len(chosen_word)):
+                    if guess.lower() == chosen_word[letter]:
                         word[letter] = guess.lower()
                         
                 if "__" not in word:
                     print('''
-     Looks like ''' + player2.upper() + ''' WINS! The word was "''' + player_word + '''".
+     Looks like ''' + player2.upper() + ''' WINS! The word was "''' + chosen_word + '''".
      
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ''')
                     break
                 
-                if wrong == 0:
-                    print(none())
-                elif wrong == 1:
-                    print(stand())
-                elif wrong == 2:
-                    print(upper())
-                elif wrong == 3:
-                    print(string())
-                elif wrong == 4:
-                    print(head())
-                elif wrong == 5:
-                    print(body())
-                elif wrong == 6:
-                    print(rightarm())
-                elif wrong == 7:
-                    print(leftarm())
-                elif wrong == 8:
-                    print(rightleg())
-                        
-                for blank in word:
-                    print(blank, end = "  ")
+                hangman()
                     
-            elif guess not in player_word:
+            elif guess not in chosen_word:
                 
                 if guess in wrongGuesses:
                     print("You already guessed this!")
@@ -386,45 +356,16 @@ while True:
                                 
                 wrong += 1
                 wrongGuesses.append(guess)
-                if wrong == 1:
-                    print(stand())
-                    for blank in word:
-                        print(blank, end = "  ")
-                elif wrong == 2:
-                    print(upper())
-                    for blank in word:
-                        print(blank, end = "  ")
-                elif wrong == 3:
-                    print(string())
-                    for blank in word:
-                        print(blank, end = "  ")
-                elif wrong == 4:
-                    print(head())
-                    for blank in word:
-                        print(blank, end = "  ")
-                elif wrong == 5:
-                    print(body())
-                    for blank in word:
-                        print(blank, end = "  ")
-                elif wrong == 6:
-                    print(rightarm())
-                    for blank in word:
-                        print(blank, end = "  ")
-                elif wrong == 7:
-                    print(leftarm())
-                    for blank in word:
-                        print(blank, end = "  ")
-                elif wrong == 8:
-                    print(rightleg())
-                    for blank in word:
-                        print(blank, end = "  ")
-                elif wrong == 9:
+                
+                if wrong == 9:
                     print(leftleg())
                     print('''
      Looks like ''' + player2 + ''' couldn't guess the word so... ''' + player1.upper() + ''' WINS.
-     The word was "''' + player_word + '''".
+     The word was "''' + chosen_word + '''".
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ''')
                     break
+
+                hangman()
       
     elif choice == "3": # instructions
         
