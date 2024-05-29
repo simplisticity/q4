@@ -230,14 +230,21 @@ while True:
 
         while choice == "1":
         
-            guess = input("Guess a letter: ")
+            guess = input("Guess a letter/word: ").lower()
             
-            if guess.lower() in chosen_word:
-                for letter in range(len(chosen_word)):
-                    if guess.lower() == chosen_word[letter]:
-                        word[letter] = guess.lower()
-
-                if "__" not in word:
+            if guess == chosen_word:
+                print('''
+     You've guessed the word! The word was "''' + chosen_word + '''".
+     
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ''')
+                break
+            
+            elif guess in chosen_word: # if the guess is in the randomly chosen word
+                for letter in range(len(chosen_word)): # go thru every letter in the random word
+                    if guess == chosen_word[letter]: # if the guess is equal to a letter
+                        word[letter] = guess # replace blanks with player's guess
+                        
+                if "__" not in word: # if all the letters have been correctly guessed, (no more blanks) then
                     print('''
      You've guessed the word! The word was "''' + chosen_word + '''".
      
@@ -245,13 +252,13 @@ while True:
                     break
 
                 hangman()
-                                
-            elif guess not in chosen_word:
+                                                        
+            elif guess not in chosen_word or guess != chosen_word:
                 
                 if guess in wrongGuesses:
                     print("You already guessed this!")
                     continue
-                    
+                                
                 wrong += 1
                 wrongGuesses.append(guess)
                 
@@ -261,11 +268,11 @@ while True:
      Oh no, you couldn't guess the word! The word was "''' + chosen_word + '''".
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ''')
                     break
-                    
+                
                 hangman()
-      
+                        
     elif choice == "2":
-
+        
         wrong = 0
         wrongGuesses = []
         
@@ -288,7 +295,7 @@ while True:
         chosen_word = input('''
       Okay ''' + player1 +  ''', turn the device towards you and make sure ''' + player2 + '''
       can't see what you're typing! Once you've done that, enter your 
-      secret word here: ''')
+      secret word here: ''').lower()
         word = word * len(chosen_word)
         
         print('''
@@ -323,21 +330,28 @@ while True:
       
       Now it's your turn, ''' + player2 + '''. Guess your partner's word! And
       don't cheat, that would be so lame.''')
-
+        
         print('''
       You have 9 lives left! Here is the secret word:
          ''' + none())
         
         for blank in word:
             print(blank, end = "  ")
-
+            
         while choice == "2":
-            guess = input("Guess a letter: ")
-
-            if guess.lower() in chosen_word:
+            guess = input("Guess a letter/word: ").lower()
+            
+            if guess == chosen_word:
+                print('''
+     Looks like ''' + player2.upper() + ''' WINS! The word was "''' + chosen_word + '''".
+     
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ''')
+                break
+            
+            if guess in chosen_word:
                 for letter in range(len(chosen_word)):
-                    if guess.lower() == chosen_word[letter]:
-                        word[letter] = guess.lower()
+                    if guess == chosen_word[letter]:
+                        word[letter] = guess
                         
                 if "__" not in word:
                     print('''
@@ -347,8 +361,9 @@ while True:
                     break
                 
                 hangman()
-                    
-            elif guess not in chosen_word:
+            
+
+            elif guess not in chosen_word or guess != chosen_word:
                 
                 if guess in wrongGuesses:
                     print("You already guessed this!")
@@ -364,7 +379,7 @@ while True:
      The word was "''' + chosen_word + '''".
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ''')
                     break
-
+                
                 hangman()
       
     elif choice == "3": # instructions
