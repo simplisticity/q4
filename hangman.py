@@ -216,7 +216,6 @@ while True:
     if choice == "1":
         
         chosen_word = random.choice(words) # get the chosen_word of the randomly chosen word
-        #print(chosen_word) # will delete, making sure letters = blank lines
         word = word * len(chosen_word) # multiply to make it equal amt of letters in word
         wrong = 0 # keep track of how many wrong guesses they have
         wrongGuesses = [] # keep track of the wrong guesses
